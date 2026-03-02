@@ -104,42 +104,32 @@
         "tags": [
           "Exceptions"
         ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "required": [
-                  "UserName"
-                ],
-                "type": "object",
-                "properties": {
-                  "UserName": {
-                    "type": "string"
-                  },
-                  "ExceptionStartDate": {
-                    "type": "string",
-                    "format": "date-time"
-                  },
-                  "ExceptionEndDate": {
-                    "type": "string",
-                    "format": "date-time"
-                  }
-                }
-              },
-              "encoding": {
-                "UserName": {
-                  "style": "form"
-                },
-                "ExceptionStartDate": {
-                  "style": "form"
-                },
-                "ExceptionEndDate": {
-                  "style": "form"
-                }
-              }
+        "parameters": [
+          {
+            "name": "UserName",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ExceptionStartDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "ExceptionEndDate",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -158,6 +148,7 @@
               "schema": {
                 "required": [
                   "AttendanceDate",
+                  "AttendanceStatus",
                   "AttendanceType",
                   "Latitude",
                   "Longitude",
@@ -187,6 +178,9 @@
                   },
                   "AttendanceType": {
                     "$ref": "#/components/schemas/AttendanceTypes"
+                  },
+                  "AttendanceStatus": {
+                    "$ref": "#/components/schemas/AttendanceStatus"
                   }
                 }
               },
@@ -204,6 +198,9 @@
                   "style": "form"
                 },
                 "AttendanceType": {
+                  "style": "form"
+                },
+                "AttendanceStatus": {
                   "style": "form"
                 }
               }
@@ -284,21 +281,61 @@
         "tags": [
           "Exceptions"
         ],
+        "parameters": [
+          {
+            "name": "userName",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exceptions/ReturnMyApprovals": {
+      "get": {
+        "tags": [
+          "Exceptions"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Exceptions/ApproveExceptions": {
+      "put": {
+        "tags": [
+          "Exceptions"
+        ],
         "requestBody": {
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                  "ExceptionId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "Status": {
+                    "$ref": "#/components/schemas/ExceptionStatus"
+                  }
+                }
+              },
+              "encoding": {
+                "ExceptionId": {
+                  "style": "form"
+                },
+                "Status": {
+                  "style": "form"
+                }
               }
             }
           }
@@ -313,10 +350,24 @@
   },
   "components": {
     "schemas": {
+      "AttendanceStatus": {
+        "enum": [
+          "YES",
+          "NO"
+        ],
+        "type": "string"
+      },
       "AttendanceTypes": {
         "enum": [
           "IN",
           "OUT"
+        ],
+        "type": "string"
+      },
+      "ExceptionStatus": {
+        "enum": [
+          "YES",
+          "NO"
         ],
         "type": "string"
       },

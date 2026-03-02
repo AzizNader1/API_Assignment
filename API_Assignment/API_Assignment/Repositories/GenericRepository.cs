@@ -11,34 +11,34 @@ namespace API_Assignment.Repositories
             _context = context;
         }
 
-        public async void AddAsync(T entity)
+        public void AddEntity(T entity)
         {
             _context.Set<T>().Add(entity);
             _context.SaveChanges();
         }
 
-        public async void DeleteAsync(int id)
+        public void DeleteEntity(int id)
         {
             _context.Set<T>().Remove(_context.Set<T>().Find(id)!);
             _context.SaveChanges();
         }
 
-        public async Task<List<T>> GetAllAsync()
+        public List<T> GetAllEntities()
         {
             return _context.Set<T>().ToList()!;
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public T GetEntityById(int id)
         {
             return _context.Set<T>().Find(id)!;
         }
 
-        public async Task<T> GetByNameAsync(string name)
+        public T GetEntityByName(string name)
         {
             return _context.Set<T>().Find(name)!;
         }
 
-        public async void UpdateAsync(T entity)
+        public void UpdateEntity(T entity)
         {
             _context.Set<T>().Update(entity);
             _context.SaveChanges();

@@ -4,6 +4,7 @@ using API_Assignment.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Assignment.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260302150129_Adding User Table in the database to store inside it the logining users")]
+    partial class AddingUserTableinthedatabasetostoreinsideittheloginingusers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -32,9 +35,6 @@ namespace API_Assignment.Migrations
 
                     b.Property<DateTime>("AttendanceDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("AttendanceStatus")
-                        .HasColumnType("int");
 
                     b.Property<int>("AttendanceType")
                         .HasColumnType("int");

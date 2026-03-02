@@ -1,6 +1,5 @@
 ﻿using API_Assignment.DTOs.UserDTOs;
 using API_Assignment.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Assignment.Controllers

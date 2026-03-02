@@ -10,6 +10,7 @@ namespace API_Assignment.UnitOfWork
         private GenericRepository<Attendance> _attendanceRepository;
         private GenericRepository<Loan> _loanRepository;
         private GenericRepository<Models.Exception> _exceptionRepository;
+        private GenericRepository<User> _userRepository;
 
         public UOW(ApplicationDbContext context)
         {
@@ -51,5 +52,18 @@ namespace API_Assignment.UnitOfWork
                 return _exceptionRepository;
             }
         }
+
+        public GenericRepository<User> UserRepository
+        {
+            get
+            {
+                if (_userRepository == null)
+                {
+                    _userRepository = new GenericRepository<User>(_context);
+                }
+                return _userRepository;
+            }
+        }
+
     }
 }

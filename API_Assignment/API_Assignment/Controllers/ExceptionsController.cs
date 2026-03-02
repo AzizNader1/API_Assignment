@@ -3,7 +3,6 @@ using API_Assignment.DTOs.ExceptionDTOs;
 using API_Assignment.DTOs.LoanDTOs;
 using API_Assignment.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Assignment.Controllers
@@ -51,7 +50,7 @@ namespace API_Assignment.Controllers
         }
 
         [HttpGet]
-        public IActionResult ReturnMyExceptions([FromForm] GetExceptionDto getExceptionDto)
+        public IActionResult ReturnMyExceptions([FromQuery] GetExceptionDto getExceptionDto)
         {
             try
             {
@@ -93,7 +92,7 @@ namespace API_Assignment.Controllers
         }
 
         [HttpGet]
-        public IActionResult ReturnMyLoans([FromRoute] string userName)
+        public IActionResult ReturnMyLoans([FromQuery] string userName)
         {
             try
             {
@@ -105,5 +104,46 @@ namespace API_Assignment.Controllers
                 return BadRequest($"Error retrieving loans:  {ex.Message}");
             }
         }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult ReturnMyApprovals()
+        {
+            var userName = User.FindFirst("UserName")?.Value;
+            var userRole = User.FindFirst("UserRole")?.Value;
+
+            if (userRole != "Admin")
+            {
+                return Forbid("Only admins can access this.");
+            }
+
+            var pendingLoans = _loanService.GetPendingLoans();
+            var pendingAttendances = _attendanceService.GetPendingAttendances();
+            var pendingExceptions = _exceptionService.GetPendingExceptions();
+            var approvals = new
+            {
+                PendingLoans = pendingLoans,
+                PendingAttendances = pendingAttendances,
+                PendingExceptions = pendingExceptions
+            };
+            return Ok(approvals);
+
+        }
+
+        [HttpPut]
+        [Authorize]
+        public IActionResult ApproveExceptions([FromForm] UpdateExceptionDto updateExceptionDto)
+        {
+            var userName = User.FindFirst("UserName")?.Value;
+            var userRole = User.FindFirst("UserRole")?.Value;
+
+            if (userRole != "Admin")
+            {
+                return Forbid("Only admins can access this.");
+            }
+            _exceptionService.UpdateExceptionStatus(updateExceptionDto.ExceptionId, updateExceptionDto.Status);
+            return Ok("Exception Status Change Successfully");
+        }
+
     }
 }

@@ -4,8 +4,8 @@ namespace API_Assignment.Models
 {
     public enum ExceptionStatus
     {
-        YES,
-        NO
+        [Display(Name = "Approved")] YES,
+        [Display(Name = "Not Approved")] NO
     }
     public class Exception
     {

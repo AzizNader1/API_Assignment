@@ -47,6 +47,11 @@
         "Name": "AttendanceType",
         "Type": "API_Assignment.Models.AttendanceTypes",
         "IsRequired": false
+      },
+      {
+        "Name": "AttendanceStatus",
+        "Type": "API_Assignment.Models.AttendanceStatus",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -110,8 +115,39 @@
   },
   {
     "ContainingType": "API_Assignment.Controllers.ExceptionsController",
+    "Method": "ApproveExceptions",
+    "RelativePath": "api/Exceptions/ApproveExceptions",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ExceptionId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "Status",
+        "Type": "API_Assignment.Models.ExceptionStatus",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Assignment.Controllers.ExceptionsController",
     "Method": "ReturnExceptions",
     "RelativePath": "api/Exceptions/ReturnExceptions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Assignment.Controllers.ExceptionsController",
+    "Method": "ReturnMyApprovals",
+    "RelativePath": "api/Exceptions/ReturnMyApprovals",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -155,7 +191,7 @@
       {
         "Name": "userName",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

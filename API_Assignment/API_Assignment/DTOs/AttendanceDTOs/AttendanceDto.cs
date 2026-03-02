@@ -16,5 +16,7 @@ namespace API_Assignment.DTOs.AttendanceDTOs
         public double Latitude { get; set; }
 
         public AttendanceTypes AttendanceType { get; set; }
+
+        public AttendanceStatus AttendanceStatus { get; set; } = AttendanceStatus.NO;
     }
 }

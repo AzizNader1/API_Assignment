@@ -1,4 +1,7 @@
-﻿using API_Assignment.DTOs.LoanDTOs;
+﻿using API_Assignment.DTOs.AttendanceDTOs;
+using API_Assignment.DTOs.ExceptionDtos;
+using API_Assignment.DTOs.LoanDTOs;
+using API_Assignment.Models;
 
 namespace API_Assignment.Services
 {
@@ -6,5 +9,7 @@ namespace API_Assignment.Services
     {
         void AddLoan(AddLoanDto addLoanDto);
         List<LoanDto> GetLoansByUserName(string userName);
+        List<LoanDto> GetPendingLoans();
+        void UpdateLoanStatus(int loanId, LoanStatus status);
     }
 }

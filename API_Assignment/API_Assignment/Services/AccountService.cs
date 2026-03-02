@@ -1,9 +1,9 @@
 ﻿using API_Assignment.DTOs.UserDTOs;
+using API_Assignment.UnitOfWork;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using API_Assignment.UnitOfWork;
 
 namespace API_Assignment.Services
 {
@@ -18,12 +18,19 @@ namespace API_Assignment.Services
         public LoginResponseDto Login(LoginUserDto loginUserDto)
         {
             if (loginUserDto == null)
-                throw new ArgumentNullException(nameof(loginUserDto),"the data can not be null");
+                throw new ArgumentNullException(nameof(loginUserDto), "the data can not be null");
 
             var userClaims = new List<Claim>()!;
-            userClaims.Add(new Claim("UserName",loginUserDto.UserName.ToString()));
-            userClaims.Add(new Claim("UserPassword",loginUserDto.Password.ToString()));
-            userClaims.Add(new Claim("UserRole", "User"));
+            userClaims.Add(new Claim("UserName", loginUserDto.UserName.ToString()));
+
+            if (loginUserDto.UserName.ToLower() == "admin")
+            {
+                userClaims.Add(new Claim("UserRole", "Admin"));
+            }
+            else
+            {
+                userClaims.Add(new Claim("UserRole", "User"));
+            }
 
             string secretKey = "welcome to my world where you can convert your dreams into reality";
             var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
@@ -36,7 +43,7 @@ namespace API_Assignment.Services
                 signingCredentials: signingCredentails
                 );
 
-            var stringToken =  new JwtSecurityTokenHandler().WriteToken(token);
+            var stringToken = new JwtSecurityTokenHandler().WriteToken(token);
             return new LoginResponseDto() { Token = stringToken };
 
             //another way to minimize the size of the code

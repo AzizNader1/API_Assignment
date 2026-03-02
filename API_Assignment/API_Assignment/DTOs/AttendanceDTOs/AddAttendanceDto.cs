@@ -13,14 +13,15 @@ namespace API_Assignment.DTOs.AttendanceDTOs
         public DateTime AttendanceDate { get; set; }
 
         [Required]
-        [Range(0.01,double.MaxValue)]
+        [Range(0.01, double.MaxValue)]
         public double Longitude { get; set; }
 
         [Required]
-        [Range(0.01,double.MaxValue)]
+        [Range(0.01, double.MaxValue)]
         public double Latitude { get; set; }
 
         [Required]
         public AttendanceTypes AttendanceType { get; set; }
+
     }
 }
