@@ -1,0 +1,58 @@
+using API_Assignment.Data;
+using API_Assignment.Services;
+using API_Assignment.UnitOfWork;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
+
+builder.Services.AddScoped<UOW>();
+builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<IExceptionService, ExceptionService>();
+builder.Services.AddScoped<ILoanService, LoanService>();
+builder.Services.AddScoped<IAttendanceService, AttendanceService>();
+
+builder.Services.AddAuthentication(opt => opt.DefaultAuthenticateScheme = "name")
+                .AddJwtBearer("name",
+                option =>
+                {
+                    string secretKey = "welcome to my world where you can convert your dreams into reality";
+                    var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
+                    option.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        IssuerSigningKey = key,
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

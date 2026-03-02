@@ -1,0 +1,513 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\loanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\loanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\iloanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\iloanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\controllers\\exceptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\controllers\\exceptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\loandtos\\loandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\loandtos\\loandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\loandtos\\addloandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\loandtos\\addloandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\attendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\iattendanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\exceptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\exceptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\iexceptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\iexceptionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\exceptiondtos\\exceptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\exceptiondtos\\exceptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\exceptiondtos\\getexceptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\exceptiondtos\\getexceptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\exceptiondtos\\addexceptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\exceptiondtos\\addexceptiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\api_assignment.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\api_assignment.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\migrations\\20260302120009_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\migrations\\20260302120009_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\userdtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\userdtos\\loginuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\userdtos\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\userdtos\\loginresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\unitofwork\\uow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\unitofwork\\uow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\repositories\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\repositories\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\attendancedtos\\attendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\attendancedtos\\attendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\dtos\\attendancedtos\\addattendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\dtos\\attendancedtos\\addattendancedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\models\\loan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|c:\\users\\azizn\\source\\repos\\api_assignment\\api_assignment\\models\\exception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0AE9B9E-27A8-4B76-9BAF-F7E87AEE4C4D}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\models\\exception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExceptionsController.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Controllers\\ExceptionsController.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Controllers\\ExceptionsController.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Controllers\\ExceptionsController.cs",
+              "RelativeToolTip": "API_Assignment\\Controllers\\ExceptionsController.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAkwFwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:31:55.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AddLoanDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\LoanDTOs\\AddLoanDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\LoanDTOs\\AddLoanDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\LoanDTOs\\AddLoanDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\LoanDTOs\\AddLoanDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:40:22.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoanDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\LoanDTOs\\LoanDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\LoanDTOs\\LoanDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\LoanDTOs\\LoanDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\LoanDTOs\\LoanDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:40:22.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoanService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\LoanService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\LoanService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\LoanService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\LoanService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:27:42.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ILoanService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\ILoanService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\ILoanService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\ILoanService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\ILoanService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:27:42.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Program.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Program.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Program.cs",
+              "RelativeToolTip": "API_Assignment\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:54:58.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AttendanceService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\AttendanceService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\AttendanceService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\AttendanceService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\AttendanceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:27:42.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAttendanceService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\IAttendanceService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\IAttendanceService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\IAttendanceService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\IAttendanceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:27:41.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ExceptionService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\ExceptionService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\ExceptionService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\ExceptionService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\ExceptionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:27:42.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IExceptionService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\IExceptionService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\IExceptionService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\IExceptionService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\IExceptionService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:27:42.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ExceptionDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\ExceptionDTOs\\ExceptionDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\ExceptionDTOs\\ExceptionDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\ExceptionDTOs\\ExceptionDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\ExceptionDTOs\\ExceptionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:21:05.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetExceptionDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\ExceptionDTOs\\GetExceptionDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\ExceptionDTOs\\GetExceptionDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\ExceptionDTOs\\GetExceptionDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\ExceptionDTOs\\GetExceptionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T12:23:15.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AddExceptionDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\ExceptionDTOs\\AddExceptionDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\ExceptionDTOs\\AddExceptionDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\ExceptionDTOs\\AddExceptionDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\ExceptionDTOs\\AddExceptionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:21:30.108Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AccountsController.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Controllers\\AccountsController.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Controllers\\AccountsController.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Controllers\\AccountsController.cs",
+              "RelativeToolTip": "API_Assignment\\Controllers\\AccountsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:31:38.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "API_Assignment.http",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\API_Assignment.http",
+              "RelativeDocumentMoniker": "API_Assignment\\API_Assignment.http",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\API_Assignment.http",
+              "RelativeToolTip": "API_Assignment\\API_Assignment.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-03-02T12:18:03.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20260302120009_init.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Migrations\\20260302120009_init.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Migrations\\20260302120009_init.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Migrations\\20260302120009_init.cs",
+              "RelativeToolTip": "API_Assignment\\Migrations\\20260302120009_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T12:00:10.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\AccountService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\AccountService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\AccountService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:11:25.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LoginResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\UserDTOs\\LoginResponseDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\UserDTOs\\LoginResponseDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\UserDTOs\\LoginResponseDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\UserDTOs\\LoginResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:17:42.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UOW.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\UnitOfWork\\UOW.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\UnitOfWork\\UOW.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\UnitOfWork\\UOW.cs",
+              "RelativeToolTip": "API_Assignment\\UnitOfWork\\UOW.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:14:04.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoginUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\UserDTOs\\LoginUserDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\UserDTOs\\LoginUserDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\UserDTOs\\LoginUserDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\UserDTOs\\LoginUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:10:59.362Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IAccountService.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\IAccountService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\IAccountService.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Services\\IAccountService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\IAccountService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T11:09:54.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Repositories\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Repositories\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Repositories\\GenericRepository.cs",
+              "RelativeToolTip": "API_Assignment\\Repositories\\GenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:48:08.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Repositories\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Repositories\\IGenericRepository.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Repositories\\IGenericRepository.cs",
+              "RelativeToolTip": "API_Assignment\\Repositories\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:48:08.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "API_Assignment\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:43:42.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Loan.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Models\\Loan.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Models\\Loan.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Models\\Loan.cs",
+              "RelativeToolTip": "API_Assignment\\Models\\Loan.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwBwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:36:04.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AttendanceDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\AttendanceDTOs\\AttendanceDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\AttendanceDTOs\\AttendanceDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\AttendanceDTOs\\AttendanceDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\AttendanceDTOs\\AttendanceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:33:23.66Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AddAttendanceDto.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\AttendanceDTOs\\AddAttendanceDto.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\DTOs\\AttendanceDTOs\\AddAttendanceDto.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\DTOs\\AttendanceDTOs\\AddAttendanceDto.cs",
+              "RelativeToolTip": "API_Assignment\\DTOs\\AttendanceDTOs\\AddAttendanceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:33:08.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Models\\Attendance.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Models\\Attendance.cs",
+              "RelativeToolTip": "API_Assignment\\Models\\Attendance.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBsAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:25:12.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Exception.cs",
+              "DocumentMoniker": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Models\\Exception.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Models\\Exception.cs",
+              "ToolTip": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\Models\\Exception.cs",
+              "RelativeToolTip": "API_Assignment\\Models\\Exception.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBgAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T10:18:19.611Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

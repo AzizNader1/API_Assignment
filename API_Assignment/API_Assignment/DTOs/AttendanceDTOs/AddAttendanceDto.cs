@@ -1,0 +1,17 @@
+﻿using API_Assignment.Models;
+
+namespace API_Assignment.DTOs.AttendanceDTOs
+{
+    public class AddAttendanceDto
+    {
+        public string UserName { get; set; } = string.Empty;
+
+        public DateTime AttendanceDate { get; set; }
+
+        public double Longitude { get; set; }
+
+        public double Latitude { get; set; }
+
+        public AttendanceTypes AttendanceType { get; set; }
+    }
+}
