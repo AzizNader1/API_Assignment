@@ -143,5 +143,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API_Assignment.Controllers.ExceptionsController",
+    "Method": "ReturnMyLoans",
+    "RelativePath": "api/Exceptions/ReturnMyLoans",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

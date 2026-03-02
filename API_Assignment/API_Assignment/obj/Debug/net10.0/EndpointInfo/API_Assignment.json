@@ -46,11 +46,14 @@
             "multipart/form-data": {
               "schema": {
                 "required": [
+                  "ExceptionEndDate",
+                  "ExceptionStartDate",
                   "UserName"
                 ],
                 "type": "object",
                 "properties": {
                   "UserName": {
+                    "maxLength": 100,
                     "type": "string"
                   },
                   "ExceptionStartDate": {
@@ -153,9 +156,17 @@
           "content": {
             "multipart/form-data": {
               "schema": {
+                "required": [
+                  "AttendanceDate",
+                  "AttendanceType",
+                  "Latitude",
+                  "Longitude",
+                  "UserName"
+                ],
                 "type": "object",
                 "properties": {
                   "UserName": {
+                    "maxLength": 100,
                     "type": "string"
                   },
                   "AttendanceDate": {
@@ -163,10 +174,14 @@
                     "format": "date-time"
                   },
                   "Longitude": {
+                    "maximum": 1.7976931348623157E+308,
+                    "minimum": 0.01,
                     "type": "number",
                     "format": "double"
                   },
                   "Latitude": {
+                    "maximum": 1.7976931348623157E+308,
+                    "minimum": 0.01,
                     "type": "number",
                     "format": "double"
                   },
@@ -211,16 +226,27 @@
           "content": {
             "multipart/form-data": {
               "schema": {
+                "required": [
+                  "Amount",
+                  "Installments",
+                  "Notes",
+                  "UserName"
+                ],
                 "type": "object",
                 "properties": {
                   "UserName": {
+                    "maxLength": 100,
                     "type": "string"
                   },
                   "Amount": {
+                    "maximum": 1.7976931348623157E+308,
+                    "minimum": 0.01,
                     "type": "number",
                     "format": "double"
                   },
                   "Installments": {
+                    "maximum": 2147483647,
+                    "minimum": 1,
                     "type": "integer",
                     "format": "int32"
                   },
@@ -252,28 +278,64 @@
           }
         }
       }
+    },
+    "/api/Exceptions/ReturnMyLoans": {
+      "get": {
+        "tags": [
+          "Exceptions"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
       "AttendanceTypes": {
         "enum": [
-          0,
-          1
+          "IN",
+          "OUT"
         ],
-        "type": "integer",
-        "format": "int32"
+        "type": "string"
       },
       "LoginUserDto": {
+        "required": [
+          "password",
+          "userName"
+        ],
         "type": "object",
         "properties": {
           "userName": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 1,
+            "type": "string"
           },
           "password": {
-            "type": "string",
-            "nullable": true
+            "maxLength": 100,
+            "minLength": 8,
+            "type": "string"
           }
         },
         "additionalProperties": false

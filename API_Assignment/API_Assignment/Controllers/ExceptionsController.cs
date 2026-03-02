@@ -2,6 +2,7 @@
 using API_Assignment.DTOs.ExceptionDTOs;
 using API_Assignment.DTOs.LoanDTOs;
 using API_Assignment.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -84,6 +85,20 @@ namespace API_Assignment.Controllers
             {
                 _loanService.AddLoan(addLoanDto);
                 return Ok("Loan added successfully.");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error retrieving loans:  {ex.Message}");
+            }
+        }
+
+        [HttpGet]
+        public IActionResult ReturnMyLoans([FromRoute] string userName)
+        {
+            try
+            {
+                var loans = _loanService.GetLoansByUserName(userName);
+                return Ok(loans);
             }
             catch (Exception ex)
             {

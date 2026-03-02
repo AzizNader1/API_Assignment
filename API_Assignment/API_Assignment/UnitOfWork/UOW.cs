@@ -7,16 +7,16 @@ namespace API_Assignment.UnitOfWork
     public class UOW
     {
         private readonly ApplicationDbContext _context;
-        private IGenericRepository<Attendance> _attendanceRepository;
-        private IGenericRepository<Loan> _loanRepository;
-        private IGenericRepository<Models.Exception> _exceptionRepository;
+        private GenericRepository<Attendance> _attendanceRepository;
+        private GenericRepository<Loan> _loanRepository;
+        private GenericRepository<Models.Exception> _exceptionRepository;
 
         public UOW(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IGenericRepository<Attendance> AttendanceRepository
+        public GenericRepository<Attendance> AttendanceRepository
         {
             get
             {
@@ -28,7 +28,7 @@ namespace API_Assignment.UnitOfWork
             }
         }
 
-        public IGenericRepository<Loan> LoanRepository
+        public GenericRepository<Loan> LoanRepository
         {
             get
             {
@@ -40,7 +40,7 @@ namespace API_Assignment.UnitOfWork
             }
         }
 
-        public IGenericRepository<Models.Exception> ExceptionRepository
+        public GenericRepository<Models.Exception> ExceptionRepository
         {
             get
             {

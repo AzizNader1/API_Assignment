@@ -1,4 +1,5 @@
 ﻿using API_Assignment.DTOs.AttendanceDTOs;
+using API_Assignment.Models;
 using API_Assignment.UnitOfWork;
 
 namespace API_Assignment.Services
@@ -13,7 +14,18 @@ namespace API_Assignment.Services
 
         public void AddAttendance(AddAttendanceDto addAttendanceDto)
         {
-            throw new NotImplementedException();
+            if (addAttendanceDto == null)
+                throw new ArgumentNullException(nameof(addAttendanceDto),"The Attendance data can not left empty");
+
+            var attendance = new Attendance
+            {
+                UserName = addAttendanceDto.UserName,
+                AttendanceDate = addAttendanceDto.AttendanceDate,
+                Longitude = addAttendanceDto.Longitude,
+                Latitude = addAttendanceDto.Latitude,
+                AttendanceType = addAttendanceDto.AttendanceType
+            };
+            _uow.AttendanceRepository.AddAsync(attendance);
         }
     }
 }

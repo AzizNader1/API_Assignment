@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\API_Assignment.csproj": {}
+    "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\API_Assignment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\API_Assignment.csproj": {
+    "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\API_Assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\API_Assignment.csproj",
+        "projectUniqueName": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\API_Assignment.csproj",
         "projectName": "API_Assignment",
-        "projectPath": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\API_Assignment.csproj",
+        "projectPath": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\API_Assignment.csproj",
         "packagesPath": "C:\\Users\\azizn\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\azizn\\source\\repos\\API_Assignment\\API_Assignment\\obj\\",
+        "outputPath": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
