@@ -1,8 +1,9 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "API_Assignment",
-    "version": "1.0"
+    "title": "API Assignment",
+    "description": "API for managing exceptions, attendance, and loans",
+    "version": "v1"
   },
   "paths": {
     "/api/Accounts/Login": {
@@ -148,7 +149,6 @@
               "schema": {
                 "required": [
                   "AttendanceDate",
-                  "AttendanceStatus",
                   "AttendanceType",
                   "Latitude",
                   "Longitude",
@@ -178,9 +178,6 @@
                   },
                   "AttendanceType": {
                     "$ref": "#/components/schemas/AttendanceTypes"
-                  },
-                  "AttendanceStatus": {
-                    "$ref": "#/components/schemas/AttendanceStatus"
                   }
                 }
               },
@@ -198,9 +195,6 @@
                   "style": "form"
                 },
                 "AttendanceType": {
-                  "style": "form"
-                },
-                "AttendanceStatus": {
                   "style": "form"
                 }
               }
@@ -350,13 +344,6 @@
   },
   "components": {
     "schemas": {
-      "AttendanceStatus": {
-        "enum": [
-          "YES",
-          "NO"
-        ],
-        "type": "string"
-      },
       "AttendanceTypes": {
         "enum": [
           "IN",
@@ -390,6 +377,14 @@
           }
         },
         "additionalProperties": false
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme.\r\n\r\nEnter 'Bearer' [space] and then your token.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\"",
+        "name": "Authorization",
+        "in": "header"
       }
     }
   },

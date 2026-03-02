@@ -47,11 +47,6 @@
         "Name": "AttendanceType",
         "Type": "API_Assignment.Models.AttendanceTypes",
         "IsRequired": false
-      },
-      {
-        "Name": "AttendanceStatus",
-        "Type": "API_Assignment.Models.AttendanceStatus",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
