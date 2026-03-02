@@ -7,8 +7,20 @@
       "RelativeMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|p:\\my projects\\api_assignment\\api_assignment\\api_assignment\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|p:\\my projects\\api_assignment\\api_assignment\\api_assignment\\controllers\\exceptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\controllers\\exceptionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|p:\\my projects\\api_assignment\\api_assignment\\api_assignment\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|p:\\my projects\\api_assignment\\api_assignment\\api_assignment\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F81E9E6A-F5AC-E3FA-638C-83D945B8E3F3}|API_Assignment\\API_Assignment.csproj|solutionrelative:api_assignment\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +30,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ExceptionsController.cs",
+              "DocumentMoniker": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Controllers\\ExceptionsController.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Controllers\\ExceptionsController.cs",
+              "ToolTip": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Controllers\\ExceptionsController.cs",
+              "RelativeToolTip": "API_Assignment\\Controllers\\ExceptionsController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAA/wH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T18:26:00.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountsController.cs",
+              "DocumentMoniker": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Controllers\\AccountsController.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Controllers\\AccountsController.cs",
+              "ToolTip": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Controllers\\AccountsController.cs",
+              "RelativeToolTip": "API_Assignment\\Controllers\\AccountsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T18:25:50.144Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AccountService.cs",
+              "DocumentMoniker": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Services\\AccountService.cs",
+              "RelativeDocumentMoniker": "API_Assignment\\Services\\AccountService.cs",
+              "ToolTip": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Services\\AccountService.cs",
+              "RelativeToolTip": "API_Assignment\\Services\\AccountService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAowCEAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-02T18:16:01.346Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -28,22 +79,22 @@
               "RelativeDocumentMoniker": "API_Assignment\\Program.cs",
               "ToolTip": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Program.cs",
               "RelativeToolTip": "API_Assignment\\Program.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACwAAAA+AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T17:20:36.163Z",
+              "WhenOpened": "2026-03-02T18:09:44.38Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ExceptionsController.cs",
-              "DocumentMoniker": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Controllers\\ExceptionsController.cs",
-              "RelativeDocumentMoniker": "API_Assignment\\Controllers\\ExceptionsController.cs",
-              "ToolTip": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\Controllers\\ExceptionsController.cs",
-              "RelativeToolTip": "API_Assignment\\Controllers\\ExceptionsController.cs",
-              "ViewState": "AgIAAG4AAAAAAAAAAAAswHcAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-02T17:06:03.557Z",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\appsettings.json",
+              "RelativeDocumentMoniker": "API_Assignment\\appsettings.json",
+              "ToolTip": "P:\\My Projects\\API_Assignment\\API_Assignment\\API_Assignment\\appsettings.json",
+              "RelativeToolTip": "API_Assignment\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-02T18:08:40.103Z",
               "EditorCaption": ""
             }
           ]

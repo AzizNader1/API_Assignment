@@ -106,41 +106,28 @@ namespace API_Assignment.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public IActionResult ReturnMyApprovals()
         {
-            var userName = User.FindFirst("UserName")?.Value;
-            var userRole = User.FindFirst("UserRole")?.Value;
+            if (User.FindFirst("UserRole")?.Value != "Admin")
+                return Forbid("Admins only can access this method");
 
-            if (userRole != "Admin")
-            {
-                return Forbid("Only admins can access this.");
-            }
-
-            var pendingLoans = _loanService.GetPendingLoans();
-            var pendingAttendances = _attendanceService.GetPendingAttendances();
-            var pendingExceptions = _exceptionService.GetPendingExceptions();
             var approvals = new
             {
-                PendingLoans = pendingLoans,
-                PendingAttendances = pendingAttendances,
-                PendingExceptions = pendingExceptions
+                PendingExceptions = _exceptionService.GetPendingExceptions(),
+                PendingLoans = _loanService.GetPendingLoans(),
+                PendingAttendances = _attendanceService.GetPendingAttendances()
             };
             return Ok(approvals);
-
         }
 
         [HttpPut]
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         public IActionResult ApproveExceptions([FromForm] UpdateExceptionDto updateExceptionDto)
         {
-            var userName = User.FindFirst("UserName")?.Value;
-            var userRole = User.FindFirst("UserRole")?.Value;
+            if (User.FindFirst("UserRole")?.Value != "Admin")
+                return Forbid("Admins only can access this method");
 
-            if (userRole != "Admin")
-            {
-                return Forbid("Only admins can access this.");
-            }
             _exceptionService.UpdateExceptionStatus(updateExceptionDto.ExceptionId, updateExceptionDto.Status);
             return Ok("Exception Status Change Successfully");
         }

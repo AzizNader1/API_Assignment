@@ -10,41 +10,42 @@ namespace API_Assignment.Services
     public class AccountService : IAccountService
     {
         private readonly UOW _uow;
-        public AccountService(UOW uow)
+        private readonly IConfiguration _config;
+        public AccountService(UOW uow, IConfiguration config)
         {
             _uow = uow;
+            _config = config;
         }
 
         public LoginResponseDto Login(LoginUserDto loginUserDto)
         {
-            if (loginUserDto == null)
-                throw new ArgumentNullException(nameof(loginUserDto), "the data can not be null");
+            if (string.IsNullOrEmpty(loginUserDto.UserName))
+                throw new ArgumentNullException(nameof(loginUserDto.UserName), "UserName can not left empty");
 
-            var userClaims = new List<Claim>()!;
-            userClaims.Add(new Claim("UserName", loginUserDto.UserName.ToString()));
+            if (string.IsNullOrEmpty(loginUserDto.Password))
+                throw new ArgumentNullException(nameof(loginUserDto.Password), "Password can not left empty");
 
-            if (loginUserDto.UserName.ToLower() == "admin")
+            var role = loginUserDto.UserName.ToLower() == "admin" ? "Admin" : "User";
+
+            var claims = new[]
             {
-                userClaims.Add(new Claim("UserRole", "Admin"));
-            }
-            else
-            {
-                userClaims.Add(new Claim("UserRole", "User"));
-            }
+                new Claim(ClaimTypes.Name, loginUserDto.UserName),
+                new Claim(ClaimTypes.Role, role)
+            };
 
-            string secretKey = "welcome to my world where you can convert your dreams into reality";
-            var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:SecretKey"]!));
+            var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
 
-            var signingCredentails = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var jwtSecurityToken = new JwtSecurityToken(
+                issuer: _config["JWT:Issuer"],
+                audience: _config["JWT:Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddHours(2),
+                signingCredentials: signingCredentials);
 
-            var token = new JwtSecurityToken(
-                claims: userClaims,
-                expires: DateTime.Now.AddDays(1),
-                signingCredentials: signingCredentails
-                );
+            var stringToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
 
-            var stringToken = new JwtSecurityTokenHandler().WriteToken(token);
-            return new LoginResponseDto() { Token = stringToken };
+            return new LoginResponseDto { Token = stringToken };
 
             //another way to minimize the size of the code
 
@@ -52,10 +53,10 @@ namespace API_Assignment.Services
             //{
             //    Token = new JwtSecurityTokenHandler()
             //        .WriteToken(new JwtSecurityToken(
-            //         claims: userClaims,
-            //         expires: DateTime.Now.AddDays(1),
+            //         claims: claims,
+            //         expires: DateTime.Now.AddHours(2),
             //         signingCredentials: new SigningCredentials(
-            //            new SymmetricSecurityKey(Encoding.ASCII.GetBytes(secretKey)),
+            //            new SymmetricSecurityKey(Encoding.ASCII.GetBytes(securityKey)),
             //            SecurityAlgorithms.HmacSha256)
             //         ))
             //};

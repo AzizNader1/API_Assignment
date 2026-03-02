@@ -52,11 +52,28 @@ namespace API_Assignment.Services
             {
                 return new List<ExceptionDto>();
             }
-            var filteredExceptions = exceptions.Where(e => e.UserName.Equals(getExceptionDto.UserName, StringComparison.OrdinalIgnoreCase)
-                                                 && e.ExceptionStartDate >= getExceptionDto.ExceptionStartDate
-                                                 && e.ExceptionEndDate <= getExceptionDto.ExceptionEndDate)
-                                                .ToList();
-            var exceptionDtos = filteredExceptions.Select(e => new ExceptionDto
+            var filteredExceptions = exceptions.Where(e => e.UserName.Equals(getExceptionDto.UserName, StringComparison.OrdinalIgnoreCase));
+
+            // now i get the exceptions that match the provided username,
+            // but now i will do a check on the date to make sure about two things:
+            // 1- each type of the dates are not default value  of the date time (which is 01/01/0001) because we get them throw [FromQuery] properity in the controller
+            // then if they are default value that means the user did not provide them
+            // and i will not consider them in the filtering process
+            // 2- the provided date (if it is not default value) should be between the exception start date and the exception end date
+
+            if (getExceptionDto.ExceptionEndDate != default)
+            {
+                filteredExceptions = filteredExceptions
+                       .Where(e => e.ExceptionEndDate >= getExceptionDto.ExceptionStartDate);
+            }
+            if (getExceptionDto.ExceptionStartDate != default)
+            {
+                filteredExceptions = filteredExceptions
+                       .Where(e => e.ExceptionStartDate <= getExceptionDto.ExceptionEndDate);
+            }
+            var result = filteredExceptions.ToList();
+
+            var exceptionDtos = result.Select(e => new ExceptionDto
             {
                 ExceptionId = e.ExceptionId,
                 UserName = e.UserName,
