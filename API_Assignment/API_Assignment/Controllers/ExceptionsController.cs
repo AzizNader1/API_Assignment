@@ -1,10 +1,8 @@
 ﻿using API_Assignment.DTOs.AttendanceDTOs;
 using API_Assignment.DTOs.ExceptionDTOs;
 using API_Assignment.DTOs.LoanDTOs;
-using API_Assignment.Models;
 using API_Assignment.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Assignment.Controllers
@@ -16,19 +14,13 @@ namespace API_Assignment.Controllers
         private readonly IExceptionService _exceptionService;
         private readonly IAttendanceService _attendanceService;
         private readonly ILoanService _loanService;
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly UserManager<User> _userManager;
         public ExceptionsController(IExceptionService exceptionService,
-            RoleManager<IdentityRole> roleManager,
-            UserManager<User> userManager,
             IAttendanceService attendanceService,
             ILoanService loanService)
         {
             _exceptionService = exceptionService;
             _attendanceService = attendanceService;
             _loanService = loanService;
-            _roleManager = roleManager;
-            _userManager = userManager;
         }
 
         [HttpPost]
@@ -36,6 +28,12 @@ namespace API_Assignment.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest("You should enter all the required values");
+
+                if (addExceptionDto.UserName.Equals("string") || string.IsNullOrEmpty(addExceptionDto.UserName))
+                    return BadRequest("You should enter a vaild username");
+
                 _exceptionService.AddException(addExceptionDto);
                 return Ok("Exception added successfully.");
             }
@@ -51,7 +49,7 @@ namespace API_Assignment.Controllers
             try
             {
                 var exceptions = _exceptionService.GetAllExceptions();
-                return Ok(exceptions);
+                return Ok(exceptions.Count() == 0 ? "there is no exception avaliable" : exceptions);
             }
             catch (System.Exception ex)
             {
@@ -64,8 +62,11 @@ namespace API_Assignment.Controllers
         {
             try
             {
+                if (getExceptionDto.UserName.Equals("string") || string.IsNullOrEmpty(getExceptionDto.UserName))
+                    return BadRequest("UserName is required");
+
                 var exceptions = _exceptionService.GetExceptionsByUserName(getExceptionDto);
-                return Ok(exceptions);
+                return Ok(exceptions.Count() == 0 ? "you have not exception yet" : exceptions);
             }
             catch (System.Exception ex)
             {
@@ -78,6 +79,12 @@ namespace API_Assignment.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                if (string.IsNullOrEmpty(addAttendanceDto.UserName) || addAttendanceDto.UserName.Equals("string"))
+                    return BadRequest("You should enter a vaild and correct username");
+
                 _attendanceService.AddAttendance(addAttendanceDto);
                 return Ok("Attendance added successfully.");
             }
@@ -92,6 +99,12 @@ namespace API_Assignment.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
+                if (string.IsNullOrEmpty(addLoanDto.UserName) || addLoanDto.UserName.Equals("string"))
+                    return BadRequest("You should enter a vaild and correct username");
+
                 _loanService.AddLoan(addLoanDto);
                 return Ok("Loan added successfully.");
             }
@@ -106,8 +119,9 @@ namespace API_Assignment.Controllers
         {
             try
             {
+
                 var loans = _loanService.GetLoansByUserName(userName);
-                return Ok(loans);
+                return Ok(loans.Count() == 0 ? "You have not loans yet" : loans);
             }
             catch (System.Exception ex)
             {
@@ -119,8 +133,6 @@ namespace API_Assignment.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult ReturnMyApprovals()
         {
-            // The [Authorize(Roles = "Admin")] attribute already handles this check.
-            // If you want to manually check, use ClaimTypes.Role or User.IsInRole("Admin").
             if (!User.IsInRole("Admin"))
                 return Forbid("Admins only can access this method");
 
@@ -130,15 +142,18 @@ namespace API_Assignment.Controllers
                 PendingLoans = _loanService.GetPendingLoans(),
                 PendingAttendances = _attendanceService.GetPendingAttendances()
             };
-            return Ok(approvals);
+            return Ok(approvals == null ? "there is no avaliable pendings to approve" : approvals);
         }
 
         [HttpPut]
         [Authorize(Roles = "Admin")]
-        public IActionResult ApproveExceptions([FromForm] UpdateExceptionDto updateExceptionDto)
+        public IActionResult ApproveExceptions([FromBody] UpdateExceptionDto updateExceptionDto)
         {
             if (!User.IsInRole("Admin"))
                 return Forbid("Admins only can access this method");
+
+            if (updateExceptionDto.ExceptionId == 0)
+                return BadRequest("ExceptionId is required");
 
             _exceptionService.UpdateExceptionStatus(updateExceptionDto.ExceptionId, updateExceptionDto.Status);
             return Ok("Exception Status Change Successfully");

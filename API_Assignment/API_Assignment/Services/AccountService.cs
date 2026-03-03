@@ -49,9 +49,14 @@ namespace API_Assignment.Services
                 return new LoginResponseDto { Message = errors };
             }
             if (registerDto.Username.ToLower().Contains("admin"))
+            {
                 await _userManager.AddToRoleAsync(user, "Admin");
+            }
+            else
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+            }
 
-            await _userManager.AddToRoleAsync(user, "User");
 
             var jwtSecurityToken = await CreateJwtToken(user);
 
@@ -59,7 +64,7 @@ namespace API_Assignment.Services
             {
                 ExpiresOn = jwtSecurityToken.ValidTo,
                 IsAuthenticated = true,
-                Roles = registerDto.Username.Contains("Admin") ? ["Admin"] : ["User"],
+                Roles = registerDto.Username.Contains("admin") ? ["Admin"] : ["User"],
                 Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
                 Username = user.UserName
             };

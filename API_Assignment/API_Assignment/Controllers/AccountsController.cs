@@ -19,6 +19,9 @@ namespace API_Assignment.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 var response = await _accountService.Login(loginUserDto);
                 return Ok(response);
             }
@@ -33,6 +36,9 @@ namespace API_Assignment.Controllers
         {
             try
             {
+                if (!ModelState.IsValid)
+                    return BadRequest(ModelState);
+
                 var response = await _accountService.Register(registerDto);
                 return Ok(response);
             }

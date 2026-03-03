@@ -260,14 +260,10 @@
                     "type": "string"
                   },
                   "Amount": {
-                    "maximum": 1.7976931348623157E+308,
-                    "minimum": 0.01,
                     "type": "number",
                     "format": "double"
                   },
                   "Installments": {
-                    "maximum": 2147483647,
-                    "minimum": 1,
                     "type": "integer",
                     "format": "int32"
                   },
@@ -340,26 +336,19 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "ExceptionId": {
-                    "type": "integer",
-                    "format": "int32"
-                  },
-                  "Status": {
-                    "$ref": "#/components/schemas/ExceptionStatus"
-                  }
-                }
-              },
-              "encoding": {
-                "ExceptionId": {
-                  "style": "form"
-                },
-                "Status": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/UpdateExceptionDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateExceptionDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateExceptionDto"
               }
             }
           }
@@ -436,6 +425,19 @@
             "maxLength": 256,
             "minLength": 0,
             "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateExceptionDto": {
+        "type": "object",
+        "properties": {
+          "exceptionId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ExceptionStatus"
           }
         },
         "additionalProperties": false

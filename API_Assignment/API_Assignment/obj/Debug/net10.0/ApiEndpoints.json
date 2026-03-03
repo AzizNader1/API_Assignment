@@ -133,14 +133,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ExceptionId",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Status",
-        "Type": "API_Assignment.Models.ExceptionStatus",
-        "IsRequired": false
+        "Name": "updateExceptionDto",
+        "Type": "API_Assignment.DTOs.ExceptionDTOs.UpdateExceptionDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
