@@ -15,11 +15,25 @@ namespace API_Assignment.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login([FromBody] LoginUserDto loginUserDto)
+        public async Task<IActionResult> Login([FromBody] LoginUserDto loginUserDto)
         {
             try
             {
-                var response = _accountService.Login(loginUserDto);
+                var response = await _accountService.Login(loginUserDto);
+                return Ok(response);
+            }
+            catch (ArgumentNullException ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
+        {
+            try
+            {
+                var response = await _accountService.Register(registerDto);
                 return Ok(response);
             }
             catch (ArgumentNullException ex)

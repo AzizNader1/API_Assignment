@@ -4,8 +4,8 @@ namespace API_Assignment.Models
 {
     public enum AttendanceStatus
     {
-        [Display(Name ="Approved")] YES,
-        [Display(Name ="Not Approved")] NO
+        [Display(Name = "Approved")] YES,
+        [Display(Name = "Not Approved")] NO
     }
     public enum AttendanceTypes
     {

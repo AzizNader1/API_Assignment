@@ -1,5 +1,9 @@
 ﻿using API_Assignment.DTOs.UserDTOs;
+using API_Assignment.Helpers;
+using API_Assignment.Models;
 using API_Assignment.UnitOfWork;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -10,57 +14,123 @@ namespace API_Assignment.Services
     public class AccountService : IAccountService
     {
         private readonly UOW _uow;
-        private readonly IConfiguration _config;
-        public AccountService(UOW uow, IConfiguration config)
+        private readonly UserManager<User> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly JWT _jwt;
+        public AccountService(UOW uow, UserManager<User> userManager, RoleManager<IdentityRole> roleManager, IOptions<JWT> jwt)
         {
             _uow = uow;
-            _config = config;
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _jwt = jwt.Value;
         }
 
-        public LoginResponseDto Login(LoginUserDto loginUserDto)
+        public async Task<LoginResponseDto> Register(RegisterDto registerDto)
         {
-            if (string.IsNullOrEmpty(loginUserDto.UserName))
-                throw new ArgumentNullException(nameof(loginUserDto.UserName), "UserName can not left empty");
+            if (await _userManager.FindByNameAsync(registerDto.Username) is not null)
+                return new LoginResponseDto { Message = "Username is already registered!" };
 
-            if (string.IsNullOrEmpty(loginUserDto.Password))
-                throw new ArgumentNullException(nameof(loginUserDto.Password), "Password can not left empty");
+            var user = new User
+            {
+                UserName = registerDto.Username,
+                FirstName = registerDto.FirstName,
+                LastName = registerDto.LastName
+            };
 
-            var role = loginUserDto.UserName.ToLower() == "admin" ? "Admin" : "User";
+            var result = await _userManager.CreateAsync(user, registerDto.Password);
+
+            if (!result.Succeeded)
+            {
+                var errors = string.Empty;
+
+                foreach (var error in result.Errors)
+                    errors += $"{error.Description},";
+
+                return new LoginResponseDto { Message = errors };
+            }
+            if (registerDto.Username.ToLower().Contains("admin"))
+                await _userManager.AddToRoleAsync(user, "Admin");
+
+            await _userManager.AddToRoleAsync(user, "User");
+
+            var jwtSecurityToken = await CreateJwtToken(user);
+
+            return new LoginResponseDto
+            {
+                ExpiresOn = jwtSecurityToken.ValidTo,
+                IsAuthenticated = true,
+                Roles = registerDto.Username.Contains("Admin") ? ["Admin"] : ["User"],
+                Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
+                Username = user.UserName
+            };
+        }
+
+        public async Task<LoginResponseDto> Login(LoginUserDto loginUserDto)
+        {
+            var loginResponseDto = new LoginResponseDto();
+
+            var user = await _userManager.FindByNameAsync(loginUserDto.UserName);
+
+            if (user is null || !await _userManager.CheckPasswordAsync(user, loginUserDto.Password))
+            {
+                loginResponseDto.Message = "UserName or Password is incorrect!";
+                return loginResponseDto;
+            }
+
+            var jwtSecurityToken = await CreateJwtToken(user);
+            var rolesList = await _userManager.GetRolesAsync(user);
+
+            loginResponseDto.IsAuthenticated = true;
+            loginResponseDto.Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+            loginResponseDto.Username = user.UserName!;
+            loginResponseDto.ExpiresOn = jwtSecurityToken.ValidTo;
+            loginResponseDto.Roles = rolesList.ToList()!;
+
+            return loginResponseDto;
+        }
+
+        public async Task<string> AddRoleAsync(AddToRoleDto addToRoleDto)
+        {
+            var user = await _userManager.FindByIdAsync(addToRoleDto.UserId);
+
+            if (user is null || !await _roleManager.RoleExistsAsync(addToRoleDto.Role))
+                return "Invalid user ID or Role";
+
+            if (await _userManager.IsInRoleAsync(user, addToRoleDto.Role))
+                return "User already assigned to this role";
+
+            var result = await _userManager.AddToRoleAsync(user, addToRoleDto.Role);
+
+            return result.Succeeded ? string.Empty : "Sonething went wrong";
+        }
+
+        private async Task<JwtSecurityToken> CreateJwtToken(User user)
+        {
+            var userClaims = await _userManager.GetClaimsAsync(user);
+            var roles = await _userManager.GetRolesAsync(user);
+            var roleClaims = new List<Claim>();
+
+            foreach (var role in roles)
+                roleClaims.Add(new Claim("roles", role));
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, loginUserDto.UserName),
-                new Claim(ClaimTypes.Role, role)
-            };
+                new Claim(JwtRegisteredClaimNames.Sub, user.UserName!)
+            }
+            .Union(userClaims)
+            .Union(roleClaims);
 
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:SecretKey"]!));
-            var signingCredentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwt.SecretKey));
+            var signingCredentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256);
 
             var jwtSecurityToken = new JwtSecurityToken(
-                issuer: _config["JWT:Issuer"],
-                audience: _config["JWT:Audience"],
+                issuer: _jwt.Issuer,
+                audience: _jwt.Audience,
                 claims: claims,
-                expires: DateTime.Now.AddHours(2),
+                expires: DateTime.Now.AddDays(_jwt.DurationInDays),
                 signingCredentials: signingCredentials);
 
-            var stringToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
-
-            return new LoginResponseDto { Token = stringToken };
-
-            //another way to minimize the size of the code
-
-            //return new LoginResponseDto()
-            //{
-            //    Token = new JwtSecurityTokenHandler()
-            //        .WriteToken(new JwtSecurityToken(
-            //         claims: claims,
-            //         expires: DateTime.Now.AddHours(2),
-            //         signingCredentials: new SigningCredentials(
-            //            new SymmetricSecurityKey(Encoding.ASCII.GetBytes(securityKey)),
-            //            SecurityAlgorithms.HmacSha256)
-            //         ))
-            //};
+            return jwtSecurityToken;
         }
-
     }
 }

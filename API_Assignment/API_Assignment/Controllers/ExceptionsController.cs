@@ -1,8 +1,10 @@
 ﻿using API_Assignment.DTOs.AttendanceDTOs;
 using API_Assignment.DTOs.ExceptionDTOs;
 using API_Assignment.DTOs.LoanDTOs;
+using API_Assignment.Models;
 using API_Assignment.Services;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API_Assignment.Controllers
@@ -14,11 +16,19 @@ namespace API_Assignment.Controllers
         private readonly IExceptionService _exceptionService;
         private readonly IAttendanceService _attendanceService;
         private readonly ILoanService _loanService;
-        public ExceptionsController(IExceptionService exceptionService, IAttendanceService attendanceService, ILoanService loanService)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly UserManager<User> _userManager;
+        public ExceptionsController(IExceptionService exceptionService,
+            RoleManager<IdentityRole> roleManager,
+            UserManager<User> userManager,
+            IAttendanceService attendanceService,
+            ILoanService loanService)
         {
             _exceptionService = exceptionService;
             _attendanceService = attendanceService;
             _loanService = loanService;
+            _roleManager = roleManager;
+            _userManager = userManager;
         }
 
         [HttpPost]
@@ -29,7 +39,7 @@ namespace API_Assignment.Controllers
                 _exceptionService.AddException(addExceptionDto);
                 return Ok("Exception added successfully.");
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest($"Error adding exception: {ex.Message}");
             }
@@ -43,7 +53,7 @@ namespace API_Assignment.Controllers
                 var exceptions = _exceptionService.GetAllExceptions();
                 return Ok(exceptions);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest($"Error retrieving exceptions: {ex.Message}");
             }
@@ -57,7 +67,7 @@ namespace API_Assignment.Controllers
                 var exceptions = _exceptionService.GetExceptionsByUserName(getExceptionDto);
                 return Ok(exceptions);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest($"Error retrieving exceptions: {ex.Message}");
             }
@@ -71,7 +81,7 @@ namespace API_Assignment.Controllers
                 _attendanceService.AddAttendance(addAttendanceDto);
                 return Ok("Attendance added successfully.");
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest($"Error retrieving attendances:  {ex.Message}");
             }
@@ -85,7 +95,7 @@ namespace API_Assignment.Controllers
                 _loanService.AddLoan(addLoanDto);
                 return Ok("Loan added successfully.");
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest($"Error retrieving loans:  {ex.Message}");
             }
@@ -99,7 +109,7 @@ namespace API_Assignment.Controllers
                 var loans = _loanService.GetLoansByUserName(userName);
                 return Ok(loans);
             }
-            catch (Exception ex)
+            catch (System.Exception ex)
             {
                 return BadRequest($"Error retrieving loans:  {ex.Message}");
             }
@@ -109,7 +119,9 @@ namespace API_Assignment.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult ReturnMyApprovals()
         {
-            if (User.FindFirst("UserRole")?.Value != "Admin")
+            // The [Authorize(Roles = "Admin")] attribute already handles this check.
+            // If you want to manually check, use ClaimTypes.Role or User.IsInRole("Admin").
+            if (!User.IsInRole("Admin"))
                 return Forbid("Admins only can access this method");
 
             var approvals = new
@@ -125,7 +137,7 @@ namespace API_Assignment.Controllers
         [Authorize(Roles = "Admin")]
         public IActionResult ApproveExceptions([FromForm] UpdateExceptionDto updateExceptionDto)
         {
-            if (User.FindFirst("UserRole")?.Value != "Admin")
+            if (!User.IsInRole("Admin"))
                 return Forbid("Admins only can access this method");
 
             _exceptionService.UpdateExceptionStatus(updateExceptionDto.ExceptionId, updateExceptionDto.Status);

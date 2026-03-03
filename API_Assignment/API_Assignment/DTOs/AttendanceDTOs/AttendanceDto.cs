@@ -1,5 +1,4 @@
 ﻿using API_Assignment.Models;
-using System.ComponentModel.DataAnnotations;
 
 namespace API_Assignment.DTOs.AttendanceDTOs
 {

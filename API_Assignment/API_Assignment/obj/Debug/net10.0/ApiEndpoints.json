@@ -16,6 +16,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "API_Assignment.Controllers.AccountsController",
+    "Method": "Register",
+    "RelativePath": "api/Accounts/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "registerDto",
+        "Type": "API_Assignment.DTOs.UserDTOs.RegisterDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "API_Assignment.Controllers.ExceptionsController",
     "Method": "AddAttendance",
     "RelativePath": "api/Exceptions/AddAttendance",

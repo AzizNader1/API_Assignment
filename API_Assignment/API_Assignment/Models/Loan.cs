@@ -13,7 +13,7 @@ namespace API_Assignment.Models
         public int LoanId { get; set; }
 
         [Required]
-         
+
         public string UserName { get; set; } = string.Empty;
 
         [Required]

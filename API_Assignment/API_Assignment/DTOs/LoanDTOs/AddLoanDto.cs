@@ -1,5 +1,4 @@
-﻿using API_Assignment.Models;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace API_Assignment.DTOs.LoanDTOs
 {
@@ -10,11 +9,11 @@ namespace API_Assignment.DTOs.LoanDTOs
         public string UserName { get; set; } = string.Empty;
 
         [Required]
-        [Range(0.01,double.MaxValue)]
+        [Range(0.01, double.MaxValue)]
         public double Amount { get; set; }
 
         [Required]
-        [Range(1,int.MaxValue)]
+        [Range(1, int.MaxValue)]
         public int Installments { get; set; }
 
         [Required]

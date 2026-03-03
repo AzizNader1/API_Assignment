@@ -4,7 +4,7 @@ namespace API_Assignment.Services
 {
     public interface IAccountService
     {
-        LoginResponseDto Login(LoginUserDto loginUserDto);
-
+        Task<LoginResponseDto> Login(LoginUserDto loginUserDto);
+        Task<LoginResponseDto> Register(RegisterDto registerDto);
     }
 }

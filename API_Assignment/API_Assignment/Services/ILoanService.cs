@@ -1,6 +1,4 @@
-﻿using API_Assignment.DTOs.AttendanceDTOs;
-using API_Assignment.DTOs.ExceptionDtos;
-using API_Assignment.DTOs.LoanDTOs;
+﻿using API_Assignment.DTOs.LoanDTOs;
 using API_Assignment.Models;
 
 namespace API_Assignment.Services
